@@ -55,13 +55,12 @@ public class InBoundOutBoundResource  extends BaseResource {
             xstream.processAnnotations(InBoundOutBoundServiceM.class);// or xstream.autodetectAnnotations(true); (Auto-detect  Annotations)
             InBoundOutBoundServiceM xsource = new InBoundOutBoundServiceM();
             Object xtarget = xstream.fromXML(in);
-            if (xtarget != null) {
+            if (xtarget != null) { 
                 xsource = (InBoundOutBoundServiceM) xtarget;
                 if (xsource != null) {
                     InboundOutboundStudent domain = new InboundOutboundStudent();
                     BeanUtils.copyProperties(xsource, domain);
-                    if (xsource.getServiceName() != null
-                            && xsource.getServiceName().length() != 0) {
+                    if (xsource.getServiceName() != null && xsource.getServiceName().length() != 0) {
                         String serviceName = xsource.getServiceName();
 
                         Paging page = xsource.getPaging();

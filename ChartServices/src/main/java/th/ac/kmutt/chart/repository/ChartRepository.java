@@ -164,9 +164,9 @@ public class ChartRepository {
             if(chartFilterInstanceEntities!=null && chartFilterInstanceEntities.size()>0){
                 for (int i=0;i<chartFilterInstanceEntities.size();i++){
                     ChartFilterInstanceEntity chartFilterInstanceEntity=chartFilterInstanceEntities.get(i);
-                    if(chartFilterInstanceEntity.getId().getFilterId()==2){ // แหล่งที่ได้รับการเผยแพร่
+                    if(chartFilterInstanceEntity.getId().getFilterId()==2){ // เน�เธซเธฅเน�เธ�เธ—เธตเน�เน�เธ”เน�เธฃเธฑเธ�เธ�เธฒเธฃเน€เธ�เธขเน�เธ�เธฃเน�
                         sb.append(" and p.id.type=" + chartFilterInstanceEntity.getValue() + "  ");
-                    }else  if(chartFilterInstanceEntity.getId().getFilterId()==3){ // แหล่งเงินทุน
+                    }else  if(chartFilterInstanceEntity.getId().getFilterId()==3){ // เน�เธซเธฅเน�เธ�เน€เธ�เธดเธ�เธ—เธธเธ�
                         sb.append(" and p.id.type=" + chartFilterInstanceEntity.getValue() + "  ");
                     }
 
@@ -218,9 +218,9 @@ public class ChartRepository {
             if(chartFilterInstanceEntities!=null && chartFilterInstanceEntities.size()>0){
                 for (int i=0;i<chartFilterInstanceEntities.size();i++){
                     ChartFilterInstanceEntity chartFilterInstanceEntity=chartFilterInstanceEntities.get(i);
-                    if(chartFilterInstanceEntity.getId().getFilterId()==2){ // แหล่งที่ได้รับการเผยแพร่
+                    if(chartFilterInstanceEntity.getId().getFilterId()==2){ // เน�เธซเธฅเน�เธ�เธ—เธตเน�เน�เธ”เน�เธฃเธฑเธ�เธ�เธฒเธฃเน€เธ�เธขเน�เธ�เธฃเน�
                         sb.append(" and p.id.type=" + chartFilterInstanceEntity.getValue() + "  ");
-                    }else  if(chartFilterInstanceEntity.getId().getFilterId()==3){ // แหล่งเงินทุน
+                    }else  if(chartFilterInstanceEntity.getId().getFilterId()==3){ // เน�เธซเธฅเน�เธ�เน€เธ�เธดเธ�เธ—เธธเธ�
                         sb.append(" and p.id.type=" + chartFilterInstanceEntity.getValue() + "  ");
                     }
 
@@ -272,9 +272,9 @@ public class ChartRepository {
             if(chartFilterInstanceEntities!=null && chartFilterInstanceEntities.size()>0){
                 for (int i=0;i<chartFilterInstanceEntities.size();i++){
                     ChartFilterInstanceEntity chartFilterInstanceEntity=chartFilterInstanceEntities.get(i);
-                    if(chartFilterInstanceEntity.getId().getFilterId()==2){ // แหล่งที่ได้รับการเผยแพร่
+                    if(chartFilterInstanceEntity.getId().getFilterId()==2){ // เน�เธซเธฅเน�เธ�เธ—เธตเน�เน�เธ”เน�เธฃเธฑเธ�เธ�เธฒเธฃเน€เธ�เธขเน�เธ�เธฃเน�
                         sb.append(" and p.id.type=" + chartFilterInstanceEntity.getValue() + "  ");
-                    }else  if(chartFilterInstanceEntity.getId().getFilterId()==3){ // แหล่งเงินทุน
+                    }else  if(chartFilterInstanceEntity.getId().getFilterId()==3){ // เน�เธซเธฅเน�เธ�เน€เธ�เธดเธ�เธ—เธธเธ�
                         sb.append(" and p.id.type=" + chartFilterInstanceEntity.getValue() + "  ");
                     }
 
