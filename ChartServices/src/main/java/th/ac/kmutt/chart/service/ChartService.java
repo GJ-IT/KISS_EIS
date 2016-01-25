@@ -146,5 +146,6 @@ public interface ChartService {
 
     
     /*INBOUND_OUTBOUND_STUDENT*/
-    public List allStudentCompareInternational(InBoundOutBoundServiceM transientInstance);
+    public List InternationalCompareAllStudent(InBoundOutBoundServiceM transientInstance);
+    public List EmpInternationalCompareAllEmp(InBoundOutBoundServiceM transientInstance);
 }

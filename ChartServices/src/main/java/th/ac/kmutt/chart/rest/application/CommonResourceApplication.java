@@ -16,7 +16,7 @@ public class CommonResourceApplication extends Application {
      */
 	
    @Override
-    public synchronized Restlet createInboundRoot(){
+    public synchronized Restlet createInboundRoot(){    
 	  
     //createRoot() {
         // Create a router Restlet that defines routes.
@@ -26,6 +26,7 @@ public class CommonResourceApplication extends Application {
                 		 "config/applicationContext-hibernate.xml",
 						 "config/applicationContext-chart-common-resource.xml",
                 		 "config/applicationContext-root-router.xml"});
+    	
         // Add a route for the MailRoot resource
     	org.restlet.ext.spring.SpringRouter router = (org.restlet.ext.spring.SpringRouter)springContext.getBean("root");
     	springContext.close();

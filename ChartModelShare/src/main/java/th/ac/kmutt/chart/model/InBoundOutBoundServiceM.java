@@ -4,6 +4,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import th.ac.kmutt.chart.xstream.common.ImakeXML;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * Created by imake on 20/10/2015.
@@ -14,13 +15,18 @@ public class InBoundOutBoundServiceM extends ImakeXML implements Serializable {
     private Integer fieldKey;
     private Integer programKey;
     private Integer semesterKey;
-    private Integer noOfStudent;
+    private BigDecimal noOf;
     private Integer academicYear;
     private Integer facultyKey;
     private Integer empKey;
     private Integer departmentKey;
     private Integer nationalityKey;
     private Integer monthKey;
+    private String facultyCode;
+    private String departmentCode;
+    public InBoundOutBoundServiceM (){
+    	
+    }
     
 	public Integer getFieldKey() {
 		return fieldKey;
@@ -40,11 +46,11 @@ public class InBoundOutBoundServiceM extends ImakeXML implements Serializable {
 	public void setSemesterKey(Integer semesterKey) {
 		this.semesterKey = semesterKey;
 	}
-	public Integer getNoOfStudent() {
-		return noOfStudent;
+	public BigDecimal getNoOf() {
+		return noOf;
 	}
-	public void setNoOfStudent(Integer noOfStudent) {
-		this.noOfStudent = noOfStudent;
+	public void setNoOf(BigDecimal BigDecimal) {
+		this.noOf = BigDecimal;
 	}
 	public Integer getAcademicYear() {
 		return academicYear;
@@ -82,5 +88,19 @@ public class InBoundOutBoundServiceM extends ImakeXML implements Serializable {
 	public void setMonthKey(Integer monthKey) {
 		this.monthKey = monthKey;
 	}
-    
+	
+	public String getFacultyCode() {
+		return facultyCode;
+	}
+	public void setFacultyCode(String facultyCode) {
+		this.facultyCode = facultyCode;
+	}
+	
+	public String getDepartmentCode() {
+		return departmentCode;
+	}	
+	public void setDepartmentCode(String departmentCode) {
+		this.departmentCode = departmentCode;
+	}
+
 }

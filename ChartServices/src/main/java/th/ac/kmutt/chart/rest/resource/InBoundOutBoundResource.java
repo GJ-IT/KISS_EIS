@@ -44,7 +44,8 @@ public class InBoundOutBoundResource  extends BaseResource {
         logger.debug("into doInit");
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     protected Representation post(Representation entity, Variant variant)
             throws ResourceException {
         // TODO Auto-generated method stub
@@ -55,44 +56,37 @@ public class InBoundOutBoundResource  extends BaseResource {
             xstream.processAnnotations(InBoundOutBoundServiceM.class);// or xstream.autodetectAnnotations(true); (Auto-detect  Annotations)
             InBoundOutBoundServiceM xsource = new InBoundOutBoundServiceM();
             Object xtarget = xstream.fromXML(in);
-            if (xtarget != null) {
+            if (xtarget != null) { 
                 xsource = (InBoundOutBoundServiceM) xtarget;
                 if (xsource != null) {
                     InboundOutboundStudent domain = new InboundOutboundStudent();
                     BeanUtils.copyProperties(xsource, domain);
-                    if (xsource.getServiceName() != null
-                            && xsource.getServiceName().length() != 0) {
+                    if (xsource.getServiceName() != null && xsource.getServiceName().length() != 0) {
                         String serviceName = xsource.getServiceName();
+                        logger.info("\n\n"+serviceName+"\n\n");
+                        
+                        if (serviceName.equals("InternationalCompareAllStudent")) {                        	
+                            Paging page = xsource.getPaging();
+                            ArrayList<InboundOutboundStudent> domains = (ArrayList<InboundOutboundStudent>)
+                                    chartService.InternationalCompareAllStudent(xsource);
+                            List<InBoundOutBoundServiceM> models = new ArrayList<InBoundOutBoundServiceM>(domains.size());
+                            models = getInBoundOutBoundServiceModels(domains);
+                            ImakeResultMessage imakeMessage = new ImakeResultMessage();
+                            imakeMessage.setResultListObj(models);
+                            return getRepresentation(entity, imakeMessage, xstream);                      	                     	
+                        }
+                        else if(serviceName.equals("EmpInternationalCompareAllEmp")) {                        	
+                            Paging page = xsource.getPaging();
+                            ArrayList<InboundOutboundStudent> domains = (ArrayList<InboundOutboundStudent>)
+                                    chartService.EmpInternationalCompareAllEmp(xsource);
+                            List<InBoundOutBoundServiceM> models = new ArrayList<InBoundOutBoundServiceM>(domains.size());
+                            models = getInBoundOutBoundServiceModels(domains);
+                            ImakeResultMessage imakeMessage = new ImakeResultMessage();
+                            imakeMessage.setResultListObj(models);
+                            return getRepresentation(entity, imakeMessage, xstream); 
+                        }
 
-                        Paging page = xsource.getPaging();
-                        @SuppressWarnings("rawtypes")
-                        ArrayList<InboundOutboundStudent> domains = (ArrayList<InboundOutboundStudent>)
-                                chartService.allStudentCompareInternational(xsource);
-                        List<InBoundOutBoundServiceM> models = new ArrayList<InBoundOutBoundServiceM>(domains.size());
-                        models = getInBoundOutBoundServiceModels(domains);
-                        ImakeResultMessage imakeMessage = new ImakeResultMessage();
-                        imakeMessage.setResultListObj(models);
-                        return getRepresentation(entity, imakeMessage, xstream);
-
-                        /*
-                        JsonRepresentation representation_aoe = null;
-
-
-                        jsonXstream
-                                .processAnnotations(th.ac.kmutt.chart.model.JournalPapersServiceM.class);// or
-                        jsonXstream.autodetectAnnotations(true);
-                        jsonXstream.setMode(XStream.NO_REFERENCES);
-                        // jsonXstream.addImplicitCollection(models.getClass(), "TitleM");;
-                        Gson gson = new Gson();
-                        String jsonStr= gson.toJson(models);
-                        System.out.println("json->" + jsonStr);
-                        String json = jsonXstream.toXML(models);
-                        System.out.println("json->"+json);
-
-                        representation_aoe = new JsonRepresentation(jsonStr);
-
-                        return representation_aoe;
-                        */
+           
                     } else {
                     }
                 }
@@ -126,7 +120,7 @@ public class InBoundOutBoundResource  extends BaseResource {
 
             model.setAcademicYear(domain.getAcademicYear());
             model.setFacultyKey(domain.getFacultyKey());    
-            model.setNoOfStudent(domain.getNoOfStudent());
+            model.setNoOf(domain.getNoOf());
             model.setPaging(null);
             models.add(model);
             

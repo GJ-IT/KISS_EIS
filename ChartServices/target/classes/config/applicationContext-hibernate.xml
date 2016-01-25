@@ -74,20 +74,21 @@
 		<property name="dataSource" ref="liferayDataSource" />
 		<property name="jpaDialect" ref="jpaDialect" />
 	</bean>
+	
 	<!-- -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	<tx:annotation-driven transaction-manager="transactionManagerLegacy" />
 	<!-- <jee:jndi-lookup id="dataSource" resource-ref="true" jndi-name="jdbc/chartdb"/> 
 		<jee:jndi-lookup id="liferayDataSource" resource-ref="true" jndi-name="jdbc/chartportaldb"/> -->
 	<!-- -->
-	<bean id="dataSource"
+	
+	 <bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://10.1.130.242:3306/CHART_DB" />
 		<property name="username" value="root" />
 		<property name="password" value="015482543" />
-	</bean>
-
+	</bean> 
 	<bean id="liferayDataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -96,15 +97,21 @@
 		<property name="password" value="" />
 	</bean>
 
-	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" /> <property 
-		name="url" value="jdbc:mysql://10.1.130.242:3306/RESEARCH_DB" /> <property 
-		name="username" value="root" /> <property name="password" value="015482543" 
-		/> </bean> <bean id="liferayDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" /> <property 
-		name="url" value="jdbc:mysql://10.1.130.242:3306/lportal_dev_v3" /> <property 
-		name="username" value="root" /> <property name="password" value="015482543" 
-		/> </bean> -->
+	<!-- <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://10.1.130.242:3306/RESEARCH_DB" />
+		<property name="username" value="root" />
+		<property name="password" value="015482543" />
+	</bean>
+	<bean id="liferayDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://10.1.130.242:3306/lportal_dev_v3" />
+		<property name="username" value="root" />
+		<property name="password" value="015482543" />
+	</bean>  -->
 		
 		
 		<!--============================== Connection for KMUTT_DWH =================================-->

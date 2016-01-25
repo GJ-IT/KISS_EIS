@@ -188,4 +188,5 @@ public class ServiceConstant {
     public static final String SERVICE_FILTER_MAPPING_ITEMS_DELETE = "deleteServiceFilterMappingItems";
     public static final String SERVICE_FILTER_MAPPING_DELETE = "deleteServiceFilterMapping";
     public static final String SERVICE_FILTER_MAPPING_FIND_BY_ID = "findByIdServiceFilterMapping";
+    
 }

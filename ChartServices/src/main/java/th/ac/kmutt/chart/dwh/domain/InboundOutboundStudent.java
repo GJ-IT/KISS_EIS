@@ -1,6 +1,7 @@
 package th.ac.kmutt.chart.dwh.domain;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +27,7 @@ public class InboundOutboundStudent implements Serializable {
 	private Integer fieldKey;
 
 	@Column(name="NO_OF_STUDENT")
-	private Integer noOfStudent;
+	private BigDecimal noOf;
 	
 	@Column(name="FACULTY_KEY")
 	private Integer facultyKey;
@@ -59,12 +60,12 @@ public class InboundOutboundStudent implements Serializable {
 		this.fieldKey = fieldKey;
 	}
 
-	public Integer getNoOfStudent() {
-		return noOfStudent;
+	public BigDecimal getNoOf() {
+		return noOf;
 	}
 
-	public void setNoOfStudent(Integer noOfStudent) {
-		this.noOfStudent = noOfStudent;
+	public void setNoOf(BigDecimal noOf) {
+		this.noOf = noOf;
 	}
 
 	public Integer getFacultyKey() {
@@ -74,5 +75,7 @@ public class InboundOutboundStudent implements Serializable {
 	public void setFacultyKey(Integer facultyKey) {
 		this.facultyKey = facultyKey;
 	}
+
+
 	
 }
