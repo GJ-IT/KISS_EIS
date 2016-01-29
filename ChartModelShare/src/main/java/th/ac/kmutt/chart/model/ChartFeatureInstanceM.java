@@ -6,7 +6,7 @@ import th.ac.kmutt.chart.xstream.common.ImakeXML;
 import java.io.Serializable;
 
 /**
- * Created by imake on 20/10/2015.
+ * Created by imake on 20/10/2015
  */
 @XStreamAlias("ChartFeatureInstanceM")
 public class ChartFeatureInstanceM  extends ImakeXML implements Serializable {
