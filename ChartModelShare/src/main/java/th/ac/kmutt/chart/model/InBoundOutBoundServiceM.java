@@ -16,6 +16,8 @@ public class InBoundOutBoundServiceM extends ImakeXML implements Serializable {
     private Integer programKey;
     private Integer semesterKey;
     private BigDecimal noOf;
+    private Integer noOfInter;
+    private Integer noOfAll;
     private Integer academicYear;
     private Integer facultyKey;
     private Integer empKey;
@@ -24,6 +26,7 @@ public class InBoundOutBoundServiceM extends ImakeXML implements Serializable {
     private Integer monthKey;
     private String facultyCode;
     private String departmentCode;
+    private String shortfaculty ;
     public InBoundOutBoundServiceM (){
     	
     }
@@ -46,12 +49,35 @@ public class InBoundOutBoundServiceM extends ImakeXML implements Serializable {
 	public void setSemesterKey(Integer semesterKey) {
 		this.semesterKey = semesterKey;
 	}
+	
+	public String getShortFaculty() {
+		return shortfaculty;
+	}
+	public void setShortFaculty(String shortfaculty) {
+		this.shortfaculty = shortfaculty;
+	}
+	
 	public BigDecimal getNoOf() {
 		return noOf;
 	}
 	public void setNoOf(BigDecimal BigDecimal) {
 		this.noOf = BigDecimal;
 	}
+	
+	public Integer noOfInter() {
+		return noOfInter;
+	}
+	public void setnoOfInter(Integer Integer) {
+		this.noOfInter = Integer;
+	}
+	
+	public Integer noOfAll() {
+		return noOfAll;
+	}
+	public void setnoOfAll(Integer Integer) {
+		this.noOfAll = Integer;
+	}
+	
 	public Integer getAcademicYear() {
 		return academicYear;
 	}
@@ -102,5 +128,6 @@ public class InBoundOutBoundServiceM extends ImakeXML implements Serializable {
 	public void setDepartmentCode(String departmentCode) {
 		this.departmentCode = departmentCode;
 	}
+
 
 }
