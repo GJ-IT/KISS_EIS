@@ -350,4 +350,20 @@ public class ChartServiceJpaImpl implements ChartService {
     public List EmpInternationalCompareAllEmp(InBoundOutBoundServiceM persistentInstance){
     	return chartRepository.EmpInternationalCompareAllEmp(persistentInstance);
     }
+    
+    public List ProgramInternationalCompareAllProgram(InBoundOutBoundServiceM persistentInstance){
+    	return chartRepository.ProgramInternationalCompareAllProgram(persistentInstance);
+    }
+    
+    public List InternationalCompareAllStudentProgramInter(InBoundOutBoundServiceM persistentInstance){
+    	return chartRepository.InternationalCompareAllStudentProgramInter(persistentInstance);
+    }
+    
+    public List InternationalCompareAllStudentByFaculty(InBoundOutBoundServiceM persistentInstance){
+    	return chartRepository.InternationalCompareAllStudentByFaculty(persistentInstance);
+    }
+    
+    public List InternationalCompareAllEmpByFaculty(InBoundOutBoundServiceM persistentInstance){
+    	return chartRepository.InternationalCompareAllEmpByFaculty(persistentInstance);
+    }
 }

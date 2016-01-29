@@ -148,4 +148,8 @@ public interface ChartService {
     /*INBOUND_OUTBOUND_STUDENT*/
     public List InternationalCompareAllStudent(InBoundOutBoundServiceM transientInstance);
     public List EmpInternationalCompareAllEmp(InBoundOutBoundServiceM transientInstance);
+    public List InternationalCompareAllStudentProgramInter(InBoundOutBoundServiceM transientInstance);
+    public List ProgramInternationalCompareAllProgram(InBoundOutBoundServiceM transientInstance);
+    public List InternationalCompareAllStudentByFaculty(InBoundOutBoundServiceM transientInstance);
+    public List InternationalCompareAllEmpByFaculty(InBoundOutBoundServiceM transientInstance);
 }

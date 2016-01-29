@@ -85,7 +85,49 @@ public class InBoundOutBoundResource  extends BaseResource {
                             imakeMessage.setResultListObj(models);
                             return getRepresentation(entity, imakeMessage, xstream); 
                         }
-
+                        else if(serviceName.equals("ProgramInternationalCompareAllProgram")) {                        	
+                            Paging page = xsource.getPaging();
+                            ArrayList<InboundOutboundStudent> domains = (ArrayList<InboundOutboundStudent>)
+                                    chartService.ProgramInternationalCompareAllProgram(xsource);
+                            List<InBoundOutBoundServiceM> models = new ArrayList<InBoundOutBoundServiceM>(domains.size());
+                            models = getInBoundOutBoundServiceModels(domains);
+                            ImakeResultMessage imakeMessage = new ImakeResultMessage();
+                            imakeMessage.setResultListObj(models);
+                            return getRepresentation(entity, imakeMessage, xstream); 
+                        }
+                        
+                        else if(serviceName.equals("InternationalCompareAllStudentProgramInter")) {                        	
+                            Paging page = xsource.getPaging();
+                            ArrayList<InboundOutboundStudent> domains = (ArrayList<InboundOutboundStudent>)
+                                    chartService.InternationalCompareAllStudentProgramInter(xsource);
+                            List<InBoundOutBoundServiceM> models = new ArrayList<InBoundOutBoundServiceM>(domains.size());
+                            models = getInBoundOutBoundServiceModels(domains);
+                            ImakeResultMessage imakeMessage = new ImakeResultMessage();
+                            imakeMessage.setResultListObj(models);
+                            return getRepresentation(entity, imakeMessage, xstream); 
+                        }
+                        
+                        else if(serviceName.equals("InternationalCompareAllStudentByFaculty")) {                        	
+                            Paging page = xsource.getPaging();
+                            ArrayList<InBoundOutBoundServiceM> domains = (ArrayList<InBoundOutBoundServiceM>)
+                                    chartService.InternationalCompareAllStudentByFaculty(xsource);
+                           // List<InBoundOutBoundServiceM> models = new ArrayList<InBoundOutBoundServiceM>(domains.size());
+                           // models = getInBoundOutBoundServiceModels(domains);
+                            ImakeResultMessage imakeMessage = new ImakeResultMessage();
+                            imakeMessage.setResultListObj(domains);
+                            return getRepresentation(entity, imakeMessage, xstream); 
+                        }
+                        
+                        else if(serviceName.equals("InternationalCompareAllEmpByFaculty")) {                        	
+                            Paging page = xsource.getPaging();
+                            ArrayList<InBoundOutBoundServiceM> domains = (ArrayList<InBoundOutBoundServiceM>)
+                                    chartService.InternationalCompareAllEmpByFaculty(xsource);
+                           // List<InBoundOutBoundServiceM> models = new ArrayList<InBoundOutBoundServiceM>(domains.size());
+                           // models = getInBoundOutBoundServiceModels(domains);
+                            ImakeResultMessage imakeMessage = new ImakeResultMessage();
+                            imakeMessage.setResultListObj(domains);
+                            return getRepresentation(entity, imakeMessage, xstream); 
+                        }
            
                     } else {
                     }
