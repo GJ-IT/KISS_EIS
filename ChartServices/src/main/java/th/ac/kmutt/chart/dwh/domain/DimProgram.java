@@ -36,6 +36,7 @@ public class DimProgram implements Serializable {
 	private String programProjectCode;
 	
 	
+
 	@Column(name="ARRANGE_TYPE")
 	private String arrangeType;
 	
@@ -97,6 +98,5 @@ public class DimProgram implements Serializable {
 	}
 	public void setArrangeType(String arrangeType) {
 		this.arrangeType = arrangeType;
-	}
-	
+		}
 }
