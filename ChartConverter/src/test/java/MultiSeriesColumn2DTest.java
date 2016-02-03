@@ -12,14 +12,16 @@ import java.util.List;
 /**
  * Created by imake on 03/02/2016.
  */
-public class RenderTest {
+public class MultiSeriesColumn2DTest {
     private ClassPathXmlApplicationContext springContext;
+    private  MultiSeriesColumn2D multiSeriesColumn2D;
     @BeforeTest
     public void setUp() {
         System.out.println("setUp");
         springContext = new ClassPathXmlApplicationContext(
                 new String[] {
                         "config/applicationContext-converter.xml"});
+        multiSeriesColumn2D =(MultiSeriesColumn2D)springContext.getBean("mscolumn2d");
     }
     @AfterTest
     public void tearDown() {
@@ -29,9 +31,9 @@ public class RenderTest {
     @Test
     public void testCategories() {
         String[] labels={"Q1","Q2","Q3"};
-        MultiSeriesColumn2D converterServices =(MultiSeriesColumn2D)springContext.getBean("mscolumn2d");
-        System.out.println(converterServices.getCategories(labels));
-        System.out.println("aoe 1"+","+converterServices);
+
+        System.out.println(multiSeriesColumn2D.getCategories(labels));
+        System.out.println("aoe 1"+","+multiSeriesColumn2D);
         Assert.assertEquals("Hello World 2", "Hello World 2");
 
     }
@@ -40,8 +42,7 @@ public class RenderTest {
     public void testDataset() {
         String[] values={"10000","10005","10009"};
         String seriesname="Previous Year";
-        MultiSeriesColumn2D converterServices =(MultiSeriesColumn2D)springContext.getBean("mscolumn2d");
-        System.out.println(converterServices.getDataset(seriesname,values));
+        System.out.println(multiSeriesColumn2D.getDataset(seriesname,values));
         System.out.println("aoe 2");
         Assert.assertEquals("Hello World 2", "Hello World 2");
     }
@@ -60,8 +61,7 @@ public class RenderTest {
 
         LineFusions.add(lineFusion1);
         LineFusions.add(lineFusion2);
-        MultiSeriesColumn2D converterServices =(MultiSeriesColumn2D)springContext.getBean("mscolumn2d");
-        System.out.println(converterServices.getTrendlines(LineFusions));
+        System.out.println(multiSeriesColumn2D.getTrendlines(LineFusions));
 
     }
 }

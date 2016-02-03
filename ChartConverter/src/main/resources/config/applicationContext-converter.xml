@@ -6,5 +6,5 @@
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 
 	<bean id="mscolumn2d" class="th.co.imake.chart.services.impl.MultiSeriesColumn2DImpl"/>
-
+	<bean id="angulargauge" class="th.co.imake.chart.services.impl.RealTimeAngularImpl"/>
 </beans>
