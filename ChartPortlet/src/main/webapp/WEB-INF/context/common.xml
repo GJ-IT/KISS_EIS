@@ -14,7 +14,7 @@
     http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 	<!-- The one and only FAQService -->
 	<mvc:resources mapping="/resources/**" location="/resources/" /> 
-	<context:component-scan base-package="th.ac.kmutt.chart" />
+	<context:component-scan base-package="th.ac.kmutt.chart,th.co.imake.chart" />
 	 
    <!--  
 	<bean id="downloadsService" class="th.ac.kmutt.research.service.impl.DownloadsServiceImpl">

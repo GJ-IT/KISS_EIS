@@ -30,6 +30,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import th.co.imake.chart.services.MultiSeriesColumn2D;
 
 /**
  * Created by imake on 07/09/2015.
@@ -63,6 +64,10 @@ public class ChartCommonPortlet {
     @Autowired
     @Qualifier("chartServiceWSImpl")
     private ChartService chartService;
+
+    @Autowired
+    @Qualifier("mscolumn2d")
+    private MultiSeriesColumn2D mscolumn2d;
     @InitBinder
     public void initBinder(PortletRequestDataBinder binder, PortletPreferences preferences) {
         logger.debug("initBinder");
@@ -80,6 +85,9 @@ public class ChartCommonPortlet {
     @RequestMapping
     // default (action=list)
     public String displayChart(PortletRequest request, Model model) {
+        String[] labels={"Q1","Q2","Q3"};
+        String categories=mscolumn2d.getCategories(labels);
+        System.out.println(categories);
         ThemeDisplay themeDisplay = (ThemeDisplay) request
                 .getAttribute(WebKeys.THEME_DISPLAY);
         String id= themeDisplay.getPortletDisplay().getId();

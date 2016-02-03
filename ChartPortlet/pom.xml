@@ -24,6 +24,7 @@
         <poi.path>/Users/imake/Desktop/poi-3.12/poi-3.12-20150511.jar</poi.path>
 
         <ChartModelShare-version>1.0-SNAPSHOT</ChartModelShare-version>
+        <ChartConverter-version>1.0-SNAPSHOT</ChartConverter-version>
     </properties>
     <dependencies>
         <!-- String Framework -->
@@ -184,6 +185,11 @@
             <scope>provided</scope>
         </dependency>
         -->
+        <dependency>
+            <groupId>th.co.imake.chart</groupId>
+            <artifactId>ChartConverter</artifactId>
+            <version>${ChartConverter-version}</version>
+        </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
